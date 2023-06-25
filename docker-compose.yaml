@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  proxy:
+    image: nginx:1.24.0
+    container_name: nginx-proxy
+    depends_on:
+      - frontend
+      - backend
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/nginx.conf
+      - ./proxy/log:/var/log/nginx
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: react-frontend
+    ports:
+      - 8080:80
+    restart: always
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: laravel-backend
+    ports:
+      - 8000:8000
+
+  db:
+    image: mariadb:10.11
+    container_name: mariadb-db
+    restart: always
+    volumes:
+      - ./database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
