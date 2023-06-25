@@ -1,0 +1,6 @@
+[submodule "backend/project_TABEYOUKA_laravel-deployment-repo"]
+	path = backend/project_TABEYOUKA_laravel-deployment-repo
+	url = https://github.com/Tabeyouka/project_TABEYOUKA_laravel-deployment-repo
+[submodule "frontend/project_TABEYOUKA_react-deployment-repo"]
+	path = frontend/project_TABEYOUKA_react-deployment-repo
+	url = https://github.com/Tabeyouka/project_TABEYOUKA_react-deployment-repo
