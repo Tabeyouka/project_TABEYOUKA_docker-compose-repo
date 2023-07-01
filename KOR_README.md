@@ -1,12 +1,13 @@
 # project_TABEYOUKA_docker-compose-repo
-여러 어플리케이션을 한번에 관리하기 위해 만들어진 리포지토리입니다.
-- 프론트엔드 (빌드된 react를 nginx로 정적파일 제공)
-- 백엔드 (라라벨)
-- 데이터베이스 (mariadb)
-- 프록시 (프론트엔드 백엔드를 프록시해주는 서버; nginx)
+
+이 리포지토리는 여러 애플리케이션을 한 번에 관리하기 위해 만들어졌습니다.
+- 프론트엔드 (빌드된 파일을 정적 파일로 NGINX에 제공합니다.)
+- 백엔드 (Laravel)
+- 프록시 (NGINX)
 
 ## Getting started
-1. 백엔드와 데이터베이스에 필요한 환경 변수파일을 받아서, `./backend`와 `./database` 디렉토리에 각각 위치시킨다.
-2. `docker compose up` 명령어를 실행하여 컨테이너들을 한번에 실행시킨다.
+1. 명령어를 터미널에 입력하여 리포지토리를 복제합니다. `git clone --recurse-submodules <repository>.` (서브모듈을 포함한 복제를 진행하기 위한 명령어입니다.)
+2. 프로젝트의 루트 디렉터리에 .env 파일을 배치합니다.
+3. `docker compose up` 명령어를 실행하여 컨테이너들을 한번에 실행시킵니다.
 
-만약 어플리케이션들이 새로 업데이트 되었다면, `docker compose build` 명령어로 이미지를 새로 빌드를 해야한다.
+애플리케이션이 업데이트된 경우 `docker compose build` 명령으로 이미지를 다시 빌드해야 합니다.
