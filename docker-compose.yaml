@@ -35,13 +35,4 @@ services:
       - 8000:8000
     restart: always
     env_file:
-      - ./backend/.env
-
-  db:
-    image: mariadb:10.11
-    container_name: mariadb-db
-    restart: always
-    volumes:
-      - ./database:/var/lib/mysql
-    env_file:
-      - ./database/.env
+      - .env
