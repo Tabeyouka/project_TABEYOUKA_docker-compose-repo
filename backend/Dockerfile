@@ -6,7 +6,7 @@ RUN apk update && apk add --no-cache curl git zlib-dev libzip-dev bash
 RUN curl -sS https://getcomposer.org/installer | php  
 RUN mv composer.phar /usr/bin/composer
 
-RUN docker-php-ext-install zip
+RUN docker-php-ext-install zip mysqli pdo pdo_mysql
 
 COPY ./project_TABEYOUKA_laravel-deployment-repo .
 
