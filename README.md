@@ -12,4 +12,5 @@ This repository was created to manage multiple applications at once.
 2. Place the `.env` file in the root directory of your project.
 3. Run the `docker compose up` command to run the containers at once.
 
+To update the application submodule, enter the `sh update.sh` command in the terminal to update it. 
 If applications have been updated, you'll need to rebuild the image with the `docker compose build` command.
