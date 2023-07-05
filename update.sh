@@ -1,2 +1,2 @@
 git submodule update --remote
-echo "Submodules updated (main)"
+echo "Submodules updated (develop)"
