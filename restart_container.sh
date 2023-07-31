@@ -14,8 +14,8 @@ if [ ! -x "$(command -v docker)" ]; then
 fi
 
 # docker-compose 가 존재하는지? 확인
-if [ ! -x "$(command -v docker-compose)" ]; then
-  echo "${RED}Error: docker-compose is not installed.${NC}" >&2
+if [ ! -x "$(command -v docker compose)" ]; then
+  echo "${RED}Error: docker compose is not installed.${NC}" >&2
   exit 1
 fi
 
