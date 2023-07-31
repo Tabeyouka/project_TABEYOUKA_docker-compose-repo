@@ -16,7 +16,9 @@ services:
     restart: always
 
   frontend:
-    image: ghcr.io/tabeyouka/tabeyouka-react:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     container_name: react-frontend
     ports:
       - 8080:80
@@ -25,7 +27,9 @@ services:
       - REACT_APP_API_URL=http://localhost:8000
 
   backend:
-    image: ghcr.io/tabeyouka/tabeyouka-laravel:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: laravel-backend
     ports:
       - 8000:8000
