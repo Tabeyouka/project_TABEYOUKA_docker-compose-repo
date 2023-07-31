@@ -26,7 +26,7 @@ This repository was created to manage multiple applications at once.
 ### ETC
 
 - The `deploy.sh` is a script that runs when a new docker image is built with github actions.
-- restart_container.sh` is a script that restarts the docker container with a fresh start.
+- `restart_container.sh` is a script that restarts the docker container with a fresh start.
 
 ### Operational Flow
 
