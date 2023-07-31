@@ -1,4 +1,4 @@
-THIS_JOBS='After Deploy'
+THIS_JOBS='Deploy'
 
 RED='\033[0;31m'
 LIGHT_RED='\033[1;31m'
