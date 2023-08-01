@@ -37,8 +37,8 @@ done
 echo ""
 
 # 2. Run docker containers
-echo "2. Run docker-compose..."
-docker-compose up -d --build
+echo "2. Run docker compose..."
+docker compose up -d --build
 echo ""
 
 # 3. Job done
