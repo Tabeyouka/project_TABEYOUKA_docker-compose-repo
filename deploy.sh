@@ -8,7 +8,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-sh ./restart_container.sh
+./restart_container.sh
 echo ""
 
 echo "${GREEN}Jobs Done!${NC} (${BLUE}${THIS_JOBS}${NC})"
