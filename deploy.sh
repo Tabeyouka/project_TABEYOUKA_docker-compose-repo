@@ -1,3 +1,4 @@
+#!/bin/bash
 THIS_JOBS='Deploy'
 
 RED='\033[0;31m'

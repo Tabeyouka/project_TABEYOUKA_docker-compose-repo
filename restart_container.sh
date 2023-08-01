@@ -1,3 +1,4 @@
+#!/bin/bash
 THIS_JOBS='Restart Container'
 
 RED='\033[0;31m'
@@ -7,25 +8,25 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# docker 가 존재하는지? 확인
+# docker is installed?
 if [ ! -x "$(command -v docker)" ]; then
   echo "${RED}Error: docker is not installed.${NC}" >&2
   exit 1
 fi
 
-# docker-compose 가 존재하는지? 확인
-if [ ! -x "$(command -v docker compose)" ]; then
-  echo "${RED}Error: docker compose is not installed.${NC}" >&2
-  exit 1
-fi
+# # docker-compose is installed?
+# if [ ! -x "$(command -v docker compose)" ]; then
+#   echo "${RED}Error: docker compose is not installed.${NC}" >&2
+#   exit 1
+# fi
 
 echo "Restarting... ${GREEN}TABEYOUKA${NC}"
 echo ""
 
-# docker-compose.yml 파일에 container_name의 값
+# container_name in docker-compose.yml file
 containers=("react-frontend" "laravel-backend" "nginx-proxy")
 
-# 1. 컨테이너 종료
+# 1. Stop containers
 echo "1. Stop containers..."
 echo "${LIGHT_GRAY} ⠿ Containers: ${containers[@]}${NC}"
 for container in "${containers[@]}"; do
@@ -35,10 +36,10 @@ for container in "${containers[@]}"; do
 done
 echo ""
 
-# 2. docker-compose 실행
+# 2. Run docker containers
 echo "2. Run docker-compose..."
 docker-compose up -d --build
 echo ""
 
-# 3. 종료
-echo "${GREEN}Jobs Done!${NC} (${BLUE}${THIS_JOBS}${NC})"
+# 3. Job done
+echo "${GREEN}Job Done!${NC} (${BLUE}${THIS_JOBS}${NC})"
